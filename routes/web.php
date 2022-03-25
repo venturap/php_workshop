@@ -23,4 +23,5 @@ Route::get('xyz', function () {
 });
 
 Route::get('/greeting', [WelcomeController::class, 'index']);
+Route::get('/goodbye', [WelcomeController::class, 'shutdown']);
 
