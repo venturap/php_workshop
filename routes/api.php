@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FilmController;
+use App\Http\Controllers\DirectorsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/films', [FilmController::class, 'index']);
+Route::get('/directors', [DirectorsController::class, 'index']);
+Route::get('/directors/{id}', [DirectorsController::class, 'show']);
+Route::post('/directors', [DirectorsController::class, 'store']);
