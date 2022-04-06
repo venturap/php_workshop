@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\FilmController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('xyz', function () {
-    return 'Hello World!';
-});
-
-Route::get('/greeting', [WelcomeController::class, 'index']);
-Route::get('/goodbye', [WelcomeController::class, 'shutdown']);
-
+Route::get('/films', [FilmController::class, 'index']);
