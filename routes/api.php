@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DirectorsController;
+use App\Http\Controllers\GenresController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/directors', [DirectorsController::class, 'index']);
 Route::get('/directors/{id}', [DirectorsController::class, 'show']);
 Route::post('/directors', [DirectorsController::class, 'store']);
+Route::delete('/directors/{id}', [DirectorsController::class, 'delete']);
+Route::put('/directors/{id}', [DirectorsController::class, 'update']);
+
+Route::get('/genres', [GenresController::class, 'index']);
+Route::get('/genres/{id}', [GenresController::class, 'show']);
+Route::delete('/genres/{id}', [GenresController::class, 'delete']);
+Route::post('/genres', [GenresController::class, 'store']);
