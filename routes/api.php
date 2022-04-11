@@ -29,4 +29,7 @@ Route::put('/directors/{id}', [DirectorsController::class, 'update']);
 Route::get('/genres', [GenresController::class, 'index']);
 Route::get('/genres/{id}', [GenresController::class, 'show']);
 Route::delete('/genres/{id}', [GenresController::class, 'delete']);
+
+Route::put('/genres/{id}', [GenresController::class, 'update']);
+
 Route::post('/genres', [GenresController::class, 'store']);

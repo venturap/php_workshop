@@ -23,4 +23,20 @@ class GenresController extends Controller
 
         return response()->json(null, 204);
     }
+
+    public function store(Request $request)
+    {
+        $genre = Genre::create($request->all());
+
+        return response()->json($genre, 201);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $genre = Genre::findOrFail($id);
+
+        $genre->update($request->all());
+
+        return response()->json($genre, 200);
+    }
 }
