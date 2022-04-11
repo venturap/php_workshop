@@ -12,14 +12,18 @@ class DirectorsController extends Controller
         return Director::all()->toJson();
     }
 
-    public function show($request)
+    public function show($id)
     {
-       return Director::findorfail($request)->toJson();
+        return Director::findorfail($id)->toJson();
     }
 
     public function store(Request $request)
     {
+
+        //dd($request->all());
+
         $director = Director::create($request->all());
+
         return response()->json($director, 201);
     }
 }
