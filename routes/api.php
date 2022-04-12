@@ -2,8 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DirectorsController;
-use App\Http\Controllers\GenresController;
+use App\Http\Controllers\DirectorController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\ActorController;
+use App\Http\Controllers\FilmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,16 +22,26 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/directors', [DirectorsController::class, 'index']);
-Route::get('/directors/{id}', [DirectorsController::class, 'show']);
-Route::post('/directors', [DirectorsController::class, 'store']);
-Route::delete('/directors/{id}', [DirectorsController::class, 'delete']);
-Route::put('/directors/{id}', [DirectorsController::class, 'update']);
+Route::get('/directors', [DirectorController::class, 'index']);
+Route::get('/directors/{id}', [DirectorController::class, 'show']);
+Route::post('/directors', [DirectorController::class, 'store']);
+Route::delete('/directors/{id}', [DirectorController::class, 'delete']);
+Route::put('/directors/{id}', [DirectorController::class, 'update']);
 
-Route::get('/genres', [GenresController::class, 'index']);
-Route::get('/genres/{id}', [GenresController::class, 'show']);
-Route::delete('/genres/{id}', [GenresController::class, 'delete']);
+Route::get('/genres', [GenreController::class, 'index']);
+Route::get('/genres/{id}', [GenreController::class, 'show']);
+Route::delete('/genres/{id}', [GenreController::class, 'delete']);
+Route::put('/genres/{id}', [GenreController::class, 'update']);
+Route::post('/genres', [GenreController::class, 'store']);
 
-Route::put('/genres/{id}', [GenresController::class, 'update']);
+Route::get('/actors', [ActorController::class, 'index']);
+Route::get('/actors/{id}', [ActorController::class, 'show']);
+Route::delete('/actors/{id}', [ActorController::class, 'delete']);
+Route::put('/actors/{id}', [ActorController::class, 'update']);
+Route::post('/actors', [ActorController::class, 'store']);
 
-Route::post('/genres', [GenresController::class, 'store']);
+Route::get('/films', [FilmController::class, 'index']);
+Route::get('/films/{id}', [FilmController::class, 'show']);
+Route::delete('/films/{id}', [FilmController::class, 'delete']);
+Route::put('/films/{id}', [FilmController::class, 'update']);
+Route::post('/films', [FilmController::class, 'store']);

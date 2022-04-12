@@ -6,7 +6,7 @@ use App\Models\Director;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\TryCatch;
 
-class DirectorsController extends Controller
+class DirectorController extends Controller
 {
     public function index()
     {
